@@ -1,0 +1,57 @@
+﻿@model NexusWeb.Models.Connection
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List Connection</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Edit Connection</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form asp-action="Create">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="control-label"></label>
+                                            <input asp-for="Name" class="form-control" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Price" class="control-label"></label>
+                                            <input asp-for="Price" class="form-control" />
+                                            <span asp-validation-for="Price" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="ConnectionTypeId" class="control-label"></label>
+                                            <select asp-for="ConnectionTypeId" class="form-control" asp-items="ViewBag.ConnectionTypeId"></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Create" class="btn btn-primary" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

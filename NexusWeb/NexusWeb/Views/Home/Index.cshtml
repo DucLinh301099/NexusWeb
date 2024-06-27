@@ -1,0 +1,699 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    Layout = "~/Views/Shared/Layout_Naxus.cshtml";
+}
+
+
+<section class="s-py-80 s-py-lg-120 s-py-xl-160 ls ms">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2" id="price">
+				<h5 class="special-heading text-center">Choose</h5>
+				<h1 class="text-center">Package</h1>
+				<p class="text-center big">Get ready for more potential, more opportunity and more of everything you expect from internet provider</p>
+			</div>
+		</div>
+		<div class="divider-45 d-none d-lg-block"></div>
+		<div class="row c-gutter-60">
+			<div class="col-lg-4 col-12">
+				<div class="pricing-plan hero-bg rounded">
+					<div class="plan-name text-uppercase bg-maincolor">
+						<h3>
+							Broad Band Connection
+						</h3>
+					</div>
+					<div class="plan-desc">
+						<div class="plan-content">
+							<h4 class="color-main">350</h4>
+							<p class="small-text text-left">
+								<i class="color-main fa fa-angle-down" aria-hidden="true"></i>
+								mb/s
+							</p>
+							<h4 class="color-main2">250</h4>
+							<p class="small-text text-left">
+								<i class="color-main2 fa fa-angle-up" aria-hidden="true"></i>
+								mb/s
+							</p>
+						</div>
+						<div class="price-icon">
+							<img src="../client/images/price-icon01.png" alt="">
+						</div>
+					</div>
+					<div class="plan-features">
+						<ul class="list-bordered">
+							<li>VOIP Service</li>
+							<li>Online IPTV HD</li>
+							<li>Giga Port</li>
+							<li>24/7 Support</li>
+							<li>Free Set Installation</li>
+						</ul>
+					</div>
+					<div class="price-wrap d-flex">
+						<span class="plan-sign small-text">usd</span>
+						<span class="plan-price color-main2">500</span>
+					</div>
+					<div class="plan-button">
+						<a asp-action="BookingForm" class="btn btn-maincolor"><span>Booking</span></a>
+					</div>
+				</div>
+				<div class="divider-45 d-block d-lg-none"></div>
+			</div>
+			<div class="col-lg-4 col-12">
+				<div class="pricing-plan hero-bg rounded">
+					<div class="plan-name text-uppercase bg-maincolor2">
+						<h3>
+							Dial – Up Connection
+						</h3>
+					</div>
+					<div class="plan-desc">
+						<div class="plan-content">
+							<h4 class="color-main3">200</h4>
+							<p class="small-text">
+								<i class="color-main3 fa fa-angle-down" aria-hidden="true"></i>
+								mb/s
+							</p>
+							<h4 class="color-main4">150</h4>
+							<p class="small-text">
+								<i class="color-main4 fa fa-angle-up" aria-hidden="true"></i>
+								mb/s
+							</p>
+						</div>
+						<div class="price-icon">
+							<img src="../client/images/price-icon02.png" alt="">
+						</div>
+					</div>
+					<div class="plan-features">
+						<ul class="list-bordered">
+							<li>VOIP Service</li>
+							<li>Online IPTV</li>
+							<li>Giga Port</li>
+							<li>24/7 Support</li>
+							<li>Free Set Installation</li>
+						</ul>
+					</div>
+					<div class="price-wrap d-flex">
+						<span class="plan-sign small-text">usd</span>
+						<span class="plan-price color-main3">325</span>
+					</div>
+					<div class="plan-button">
+						<a asp-action="BookingForm" class="btn btn-maincolor2"><span>Booking</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="divider-20 d-block d-md-none"></div>
+			<div class="col-lg-4 col-12">
+				<div class="pricing-plan hero-bg rounded">
+					<div class="plan-name text-uppercase bg-maincolor3">
+						<h3>
+							LandLine Connection
+						</h3>
+					</div>
+					<div class="plan-desc">
+						<div class="plan-content">
+							<h4 class="color-main5">100</h4>
+							<p class="small-text">
+								<i class="color-main5 fa fa-angle-down" aria-hidden="true"></i>
+								mb/s
+							</p>
+							<h4 class="color-main6">50</h4>
+							<p class="small-text">
+								<i class="color-main6 fa fa-angle-up" aria-hidden="true"></i>
+								mb/s
+							</p>
+						</div>
+						<div class="price-icon">
+							<img src="../client/images/price-icon03.png" alt="">
+						</div>
+					</div>
+					<div class="plan-features">
+						<ul class="list-bordered">
+							<li>VOIP Service</li>
+							<li>Online IPTV</li>
+							<li>Giga Port</li>
+							<li>24/7 Support</li>
+							<li>Free Set Installation</li>
+						</ul>
+					</div>
+					<div class="price-wrap d-flex">
+						<span class="plan-sign small-text">usd</span>
+						<span class="plan-price color-main5">250</span>
+					</div>
+					<div class="plan-button">
+						<a asp-action="BookingForm" class="btn btn-maincolor3"><span>Booking</span></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ds s-pt-70 s-pb-130 s-pt-lg-130 s-pb-lg-160 s-pt-xl-130 s-pb-xl-160 background-gradient2 about-section cover-background" id="about">
+	<div class="container">
+		<div class="d-block d-lg-none divider-5"></div>
+		<div class="row c-gutter-60 align-items-center">
+			<div class="col-xl-6 col-lg-6 col-lg-6 col-xs-12 order-2 order-lg-1 animate" data-animation="fadeInLeftBig">
+				<div class="side-image">
+					<img src="../client/images/about-image.png" width="880" alt="">
+					<div class="d-block d-lg-none divider-10"></div>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-lg-6 col-xs-12 order-1 order-lg-2">
+				<div class="item-content text-center text-lg-left">
+					<h5 class="fw-200 text-uppercase">We Are</h5>
+					<h3>#1 Internet Service Provider Company In Country</h3>
+					<h6 class="fw-500 font-italic">To get started with MaxiCom, please go over all of our plans to let our operators know which one works for you the best!</h6>
+					<p class="big">
+						We guarantee high-quality customer support service with high-speed satellite connection all over the world. Enjoy fun family nights and loud friends parties at your place! MaxiCom provides excellent entertainment.
+					</p>
+					<div class="d-flex justify-content-between mt-50">
+						<a class="btn btn-white" href=""><span>Read More</span></a>
+						<img src="../client/images/signature2.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-none d-lg-block divider-35"></div>
+</section>
+
+<section class="ls s-pb-80 s-pb-lg-120 s-pb-xl-160 devices-section overflow-visible" id="features">
+	<div class="container">
+		<div class="row c-gutter-20 c-gutter-lg-60">
+			<div class="col-12 col-lg-8 offset-lg-2 text-center">
+				<img src="../client/images/img-01.png" alt="">
+				<div class="divider-50"></div>
+				<h5 class="special-heading text-center">4K</h5>
+				<h1 class="text-center">IPTV</h1>
+				<p class="text-center big">Watch your favorite channels on various types of devices:<br> TVs, computers, smartphones and tablets</p>
+				<div class="divider-50 d-none d-md-block"></div>
+				<a class="btn btn-google" href="#" title="Google Play">Google Play</a>
+				<a class="btn btn-apple" href="#" title="Apple Store">Apple Store</a>
+			</div>
+		</div>
+	</div>
+	<div class="divider-80 d-none d-xl-block"></div>
+</section>
+
+<section class="ls ms map-section s-pt-40 s-pb-30 s-pt-lg-100 s-pb-lg-90" id="location">
+	<div class="page_map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1041430160044!2d105.77910101107298!3d21.028518587705626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b329f9e59f%3A0xb013124dd37ad2a6!2zU-G7kSA4IFTDtG4gVGjhuqV0IFRodXnhur90LCBN4bu5IMSQw6xuaCwgVOG7qyBMacOqbSwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1713795804832!5m2!1sen!2s"
+				style="height: 60%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);" allowfullscreen="" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+	</div>
+	<div class="container">
+		<div class="divider-10"></div>
+		<div class="row text-center text-md-left">
+			<div class="col-12 col-lg-4">
+				<h5 class="special-heading text-center text-lg-left">Ha Noi</h5>
+				<h3 class="text-center text-lg-left text-uppercase">Cover Map</h3>
+			</div>
+			<div class="divider-15 d-block d-lg-none"></div>
+			<div class="col-12 col-md-6 col-lg-4">
+				<div class="media align-items-baseline">
+					<div class="icon-styled">
+						<i class="color-main2 fa fa-map-marker fs-14" aria-hidden="true"></i>
+					</div>
+
+					<div class="media-body">
+						<p>
+							Internet and cable TV available
+						</p>
+					</div>
+				</div>
+				<div class="media align-items-baseline">
+					<div class="icon-styled">
+						<i class="color-main4 fa fa-map-marker fs-14" aria-hidden="true"></i>
+					</div>
+
+					<div class="media-body">
+						<p>
+							Internet connection only available
+						</p>
+					</div>
+				</div>
+				<div class="media align-items-baseline">
+					<div class="icon-styled">
+						<i class="color-main6 fa fa-map-marker fs-14" aria-hidden="true"></i>
+					</div>
+
+					<div class="media-body">
+						<p>
+							Cable TV connection only available
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4">
+				<div class="media align-items-baseline">
+					<div class="icon-styled">
+						<i class="color-darkgrey fa fa-map-marker fs-14" aria-hidden="true"></i>
+					</div>
+
+					<div class="media-body">
+						<p>
+							Connection not available
+						</p>
+					</div>
+				</div>
+				<div class="media align-items-baseline">
+					<div class="icon-styled">
+						<i class="color-main fa fa-cog fs-14" aria-hidden="true"></i>
+					</div>
+
+					<div class="media-body">
+						<p>
+							At this address is the construction of the network. Wait for connection soon
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divider-10"></div>
+	</div>
+</section>
+
+<section class="ds s-pt-80 s-pb-20 s-pt-lg-130 s-pb-lg-70 s-pt-xl-160 s-pb-xl-100 c-gutter-60 c-mb-50 background-gradient advantage-section cover-background" id="advantage">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-4 col-md-6 animate" data-animation="fadeInUp">
+				<div class="icon-box text-center">
+					<div class="image-styled">
+						<img alt="" src="../client/images/icon-1.png">
+					</div>
+					<h5>
+						<a href="#">Gift Sertificate</a>
+					</h5>
+
+					<p>
+						Certificates for payment of services and equipment
+					</p>
+				</div>
+			</div><!-- .col-* -->
+			<div class="col-xl-4 col-md-6 animate" data-animation="fadeInUp">
+				<div class="icon-box text-center">
+					<div class="image-styled">
+						<img alt="" src="../client/images/icon-2.png">
+					</div>
+
+					<h5>
+						<a href="#">Double Speed</a>
+					</h5>
+
+					<p>
+						Magna aliquyam erat, sed diam voluptua at vero eos et accusam
+					</p>
+				</div>
+			</div><!-- .col-* -->
+			<div class="col-xl-4 col-md-6 animate" data-animation="fadeInUp">
+				<div class="icon-box text-center">
+					<div class="image-styled">
+						<img alt="" src="../client/images/icon-3.png">
+					</div>
+
+					<h5>
+						<a href="#">IP Address</a>
+					</h5>
+
+					<p>
+						Additional static IP address vero eos et accusam et justo duo
+					</p>
+				</div>
+			</div><!-- .col-* -->
+			<div class="col-xl-4 col-md-6 animate" data-animation="fadeInUp">
+				<div class="icon-box text-center">
+					<div class="image-styled">
+						<img alt="" src="../client/images/icon-4.png">
+					</div>
+
+					<h5>
+						<a href="#">Cable Insurance</a>
+					</h5>
+
+					<p>
+						Three free call wizard to repair the cable in the apartment
+					</p>
+				</div>
+			</div><!-- .col-* -->
+			<div class="col-xl-4 col-md-6 animate" data-animation="fadeInUp">
+				<div class="icon-box text-center">
+					<div class="image-styled">
+						<img alt="" src="../client/images/icon-5.png">
+					</div>
+					<h5>
+						<a href="#">Router Setup</a>
+					</h5>
+
+					<p>
+						Call a specialist to configure the router for free lifetime
+					</p>
+				</div>
+			</div><!-- .col-* -->
+			<div class="col-xl-4 col-md-6 animate" data-animation="fadeInUp">
+				<div class="icon-box text-center">
+					<div class="image-styled">
+						<img alt="" src="../client/images/icon-6.png">
+					</div>
+
+					<h5>
+						<a href="service-single.html">Hot Reserve</a>
+					</h5>
+
+					<p>
+						Redundant connectivity to Lanet and switch port
+					</p>
+				</div>
+			</div><!-- .col-* -->
+			<div class="d-none d-lg-block divider-small"></div>
+
+		</div>
+	</div>
+</section>
+
+<section class="s-pt-75 s-pb-60 s-pb-md-80 s-py-lg-120 s-pt-xl-155 s-pb-xl-160 ls ms" id="testimonials">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="testimonials-slider owl-carousel" data-autoplay="false" data-loop="false" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-nav="false" data-dots="true">
+					<div class="quote-item">
+						<div class="quote-image">
+							<img src="../client/images/testimonials_01.jpg" alt="">
+						</div>
+						<div class="quote-inner">
+							<p class="small-text quote-meta">
+								Gregory D. Grey, Client
+							</p>
+							<p class="quote-content">
+								We had hughesnet for ages and were completely unhappy with it. We switched to MaxiCom and have never looked back. We are much much happier!
+							</p>
+							<div class="quote-signature">
+								<img class="signature" src="../client/images/testimonial-sign-1.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="quote-item">
+						<div class="quote-image">
+							<img src="../client/images/testimonials_02.jpg" alt="">
+						</div>
+						<div class="quote-inner">
+							<p class="small-text quote-meta">
+								Betsy R. Donley, Client
+							</p>
+							<p class="quote-content">
+								I have been a client of MaxiCom for several years. They provide an excellent service at an amazingly great price. I tell my friends about a great service.
+							</p>
+							<div class="quote-signature">
+								<img class="signature" src="../client/images/testimonial-sign-2.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="quote-item">
+						<div class="quote-image">
+							<img src="../client/images/testimonials_03.jpg" alt="">
+						</div>
+						<div class="quote-inner">
+							<p class="small-text quote-meta">
+								Gregory D. Grey, Client
+							</p>
+							<p class="quote-content">
+								Have had their service for over 1 year, completely trouble free. Installers were a pleasure to deal with. Installation was actually less than estimate.
+							</p>
+							<div class="quote-signature">
+								<img class="signature" src="../client/images/testimonial-sign-3.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div><!-- .testimonials-slider -->
+
+			</div>
+		</div>
+	</div>
+	<div class="divider-55 d-block"></div>
+</section>
+
+<section class="s-pb-80 s-pb-lg-120 s-pb-xl-160 ls blog-carousel overflow-visible" id="blog">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="owl-carousel" data-autoplay="true" data-loop="true" data-responsive-lg="3" data-responsive-md="2" data-responsive-sm="2" data-nav="false" data-dots="false" data-margin="60">
+					<article class="vertical-item text-center text-md-left post type-post status-publish format-standard has-post-thumbnail">
+						<div class="item-media post-thumbnail">
+							<div class="item-media">
+								<img src="../client/images/06.jpg" alt="">
+								<div class="media-links">
+									<a class="abs-link" title="" href="#"></a>
+								</div>
+								<div class="post-data">
+									<a href="#">
+										<h6>02<span>oct</span></h6>
+									</a>
+								</div>
+							</div>
+						</div><!-- .post-thumbnail -->
+						<div class="item-content">
+							<header class="entry-header">
+								<h6>
+									<a href="#" rel="bookmark">
+										Watch Your Favorite Racing Sport Channels!
+									</a>
+								</h6>
+								<div class="entry-meta small-text color-darkgrey">
+									<span class="comment-count">
+										<a href="#">
+											5 comments
+										</a>
+									</span>
+									<span class="like-count">
+										<a href="#">
+											2 Likes
+										</a>
+									</span>
+									<span class="views-count">
+										10 Views
+									</span>
+								</div>
+								<!-- .entry-meta -->
+
+							</header>
+							<!-- .entry-header -->
+						</div><!-- .item-content -->
+					</article><!-- #post-## -->
+					<article class="vertical-item text-center text-md-left post type-post status-publish format-standard has-post-thumbnail">
+						<div class="item-media post-thumbnail">
+							<div class="item-media">
+								<img src="../client/images/07.jpg" alt="">
+								<div class="media-links">
+									<a class="abs-link" title="" href="#"></a>
+								</div>
+								<div class="post-data">
+									<a href="#">
+										<h6>27<span>sept</span></h6>
+									</a>
+								</div>
+							</div>
+						</div><!-- .post-thumbnail -->
+						<div class="item-content">
+							<header class="entry-header">
+								<h6>
+									<a href="#" rel="bookmark">
+										When Movie Stars Switch to Reality TV Shows
+									</a>
+								</h6>
+								<div class="entry-meta small-text color-darkgrey">
+									<span class="comment-count">
+										<a href="#">
+											3 comments
+										</a>
+									</span>
+									<span class="like-count">
+										<a href="#">
+											1 Likes
+										</a>
+									</span>
+									<span class="views-count">
+										19 Views
+									</span>
+								</div>
+								<!-- .entry-meta -->
+
+							</header>
+							<!-- .entry-header -->
+						</div><!-- .item-content -->
+					</article><!-- #post-## -->
+					<article class="vertical-item text-center text-md-left post type-post status-publish format-standard has-post-thumbnail">
+						<div class="item-media post-thumbnail">
+							<div class="item-media">
+								<img src="../client/images/03.jpg" alt="">
+								<div class="media-links">
+									<a class="abs-link" title="" href="#"></a>
+								</div>
+								<div class="post-data">
+									<a href="#">
+										<h6>19<span>sept</span></h6>
+									</a>
+								</div>
+							</div>
+						</div><!-- .post-thumbnail -->
+						<div class="item-content">
+							<header class="entry-header">
+								<h6>
+									<a href="#" rel="bookmark">
+										7 Questions after The Walking Dead’s Season 7 Finale
+									</a>
+								</h6>
+								<div class="entry-meta small-text color-darkgrey">
+									<span class="comment-count">
+										<a href="#">
+											9 comments
+										</a>
+									</span>
+									<span class="like-count">
+										<a href="#">
+											4 Likes
+										</a>
+									</span>
+									<span class="views-count">
+										25 Views
+									</span>
+								</div>
+								<!-- .entry-meta -->
+
+							</header>
+							<!-- .entry-header -->
+						</div><!-- .item-content -->
+					</article><!-- #post-## -->
+					<article class="vertical-item text-center text-md-left post type-post status-publish format-standard has-post-thumbnail">
+						<div class="item-media post-thumbnail">
+							<div class="item-media">
+								<img src="../client/images/05.jpg" alt="">
+								<div class="media-links">
+									<a class="abs-link" title="" href="#"></a>
+								</div>
+								<div class="post-data">
+									<a href="#">
+										<h6>11<span>sept</span></h6>
+									</a>
+								</div>
+							</div>
+						</div><!-- .post-thumbnail -->
+						<div class="item-content">
+							<header class="entry-header">
+								<h6>
+									<a href="#" rel="bookmark">
+										When Movie Stars Switch to Reality TV Shows
+									</a>
+								</h6>
+								<div class="entry-meta small-text color-darkgrey">
+									<span class="comment-count">
+										<a href="#">
+											4 comments
+										</a>
+									</span>
+									<span class="like-count">
+										<a href="#">
+											3 Likes
+										</a>
+									</span>
+									<span class="views-count">
+										14 Views
+									</span>
+								</div>
+								<!-- .entry-meta -->
+
+							</header>
+							<!-- .entry-header -->
+						</div><!-- .item-content -->
+					</article><!-- #post-## -->
+					<article class="vertical-item text-center text-md-left post type-post status-publish format-standard has-post-thumbnail">
+						<div class="item-media post-thumbnail">
+							<div class="item-media">
+								<img src="../client/images/10.jpg" alt="">
+								<div class="media-links">
+									<a class="abs-link" title="" href="#"></a>
+								</div>
+								<div class="post-data">
+									<a href="#">
+										<h6>04<span>sept</span></h6>
+									</a>
+								</div>
+							</div>
+						</div><!-- .post-thumbnail -->
+						<div class="item-content">
+							<header class="entry-header">
+								<h6>
+									<a href="#" rel="bookmark">
+										Myriad Entertainment Options in Your Home Package
+									</a>
+								</h6>
+								<div class="entry-meta small-text color-darkgrey">
+									<span class="comment-count">
+										<a href="#">
+											1 comments
+										</a>
+									</span>
+									<span class="like-count">
+										<a href="#">
+											0 Likes
+										</a>
+									</span>
+									<span class="views-count">
+										7 Views
+									</span>
+								</div>
+								<!-- .entry-meta -->
+
+							</header>
+							<!-- .entry-header -->
+						</div><!-- .item-content -->
+					</article><!-- #post-## -->
+					<article class="vertical-item text-center text-md-left post type-post status-publish format-standard has-post-thumbnail">
+						<div class="item-media post-thumbnail">
+							<div class="item-media">
+								<img src="../client/images/17.jpg" alt="">
+								<div class="media-links">
+									<a class="abs-link" title="" href="#"></a>
+								</div>
+								<div class="post-data">
+									<a href="#">
+										<h6>31<span>aug</span></h6>
+									</a>
+								</div>
+							</div>
+						</div><!-- .post-thumbnail -->
+						<div class="item-content">
+							<header class="entry-header">
+								<h6>
+									<a href="#" rel="bookmark">
+										Stay Tuned for New Sports and Travel Channels
+									</a>
+								</h6>
+								<div class="entry-meta small-text color-darkgrey">
+									<span class="comment-count">
+										<a href="#">
+											6 comments
+										</a>
+									</span>
+									<span class="like-count">
+										<a href="#">
+											8 Likes
+										</a>
+									</span>
+									<span class="views-count">
+										34 Views
+									</span>
+								</div>
+								<!-- .entry-meta -->
+
+							</header>
+							<!-- .entry-header -->
+						</div><!-- .item-content -->
+					</article><!-- #post-## -->
+				</div><!-- .testimonials-slider -->
+
+			</div>
+		</div>
+	</div>
+</section>

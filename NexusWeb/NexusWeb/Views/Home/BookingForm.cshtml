@@ -1,0 +1,89 @@
+﻿@model NexusWeb.ViewModels.BookingVM;
+
+@{
+	ViewData["Title"] = "Booking Form";
+	Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+
+<section class="ls s-py-80 s-py-lg-120 s-py-xl-160 c-gutter-100 booking-form container-px-30">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 animate animated scaleAppear">
+
+				<h5 class="text-center text-md-left special-heading">
+					join MaxiCom today<br>
+					<span class="text-uppercase">connect now</span>
+				</h5>
+				<div class="divider-50 d-none d-xl-block"></div>
+				<form class="c-mb-10 c-mb-md-20 c-gutter-20 text-center text-md-left" method="post" asp-action="BookingForm">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group has-placeholder">
+								<label for="select">Select Form</label>
+								<i class="fa fa-gear color-main"></i>
+								<select class="form-control" asp-for="ConnectionId" asp-items="ViewBag.ConnectionId">
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group has-placeholder">
+								<label for="address">Address</label>
+								<i class="fa fa-home color-main"></i>
+								<input type="text" size="30" asp-for="Address" class="form-control" placeholder="Address">
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+
+						<div class="col-sm-6">
+							<div class="form-group has-placeholder">
+								<label for="name">Full Name </label>
+								<i class="fa fa-user color-main"></i>
+								<input type="text" asp-for="Name" size="30" class="form-control" placeholder="Full Name">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group has-placeholder">
+								<label for="phone">Phone Number</label>
+								<i class="fa fa-phone color-main"></i>
+								<input type="text" asp-for="Phone" size="30" value="" class="form-control" placeholder="Phone Number">
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+
+						<div class="col-sm-12">
+
+							<div class="form-group has-placeholder">
+								<label for="message">Message</label>
+								<i class="fa fa-edit color-main"></i>
+								<textarea  rows="6" cols="45" asp-for="Message"  class="form-control" placeholder="Your Message"></textarea>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+
+						<div class="col-sm-12 text-center text-md-left mt-30">
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-maincolor">
+									Submit
+								</button>
+							</div>
+						</div>
+
+					</div>
+
+				</form>
+			</div>
+			<!--.col-* -->
+
+		</div>
+	</div>
+</section>

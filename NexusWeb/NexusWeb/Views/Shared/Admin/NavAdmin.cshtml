@@ -1,0 +1,185 @@
+﻿<div class="nk-sidebar-element">
+    <div class="nk-sidebar-content">
+        <div class="nk-sidebar-menu">
+            <ul class="nk-menu">
+                <li class="nk-menu-item">
+                    <a asp-controller="Admin" asp-action="Index" class="nk-menu-link">
+                        <span class="nk-menu-icon">
+                            <em class="icon ni ni-home-fill"></em>
+                        </span>
+                        <span class="nk-menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                @if (Context.Session.GetInt32("Level") == 4 || Context.Session.GetInt32("Level") ==2)
+                {
+                    <li class="nk-menu-item">
+                        <a asp-controller="Bookings" asp-action="Index" class="nk-menu-link">
+                            <span class="nk-menu-icon">
+                                <em class="icon ni ni-calendar-booking"></em>
+                            </span>
+                            <span class="nk-menu-text">Bookings</span>
+                        </a>
+                    </li>
+                }
+                @if (Context.Session.GetInt32("Level") == 4 || Context.Session.GetInt32("Level") == 3)
+                {
+                    
+                
+                    <li class="nk-menu-item has-sub ">
+                        <a href="#"  class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon">
+                                <em class="icon ni ni-users-fill"></em>
+                            </span>
+                            <span class="nk-menu-text">User Manage</span>
+                        </a>
+                        <ul class="nk-menu-sub" >
+                            <li class="nk-menu-item ">
+                                <a asp-controller="Users" asp-action="Create" class="nk-menu-link">
+                                    <span class="nk-menu-text">Create</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a asp-controller="Users" asp-action="Index" class="nk-menu-link">
+                                    <span class="nk-menu-text">User List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+
+                <li class="nk-menu-item has-sub ">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon">
+                            <em class="icon ni ni-user-list-fill"></em>
+                        </span>
+                        <span class="nk-menu-text">Customers</span>
+                    </a>
+                    <ul class="nk-menu-sub" >
+                        <li class="nk-menu-item">
+                            <a asp-controller="Customers" asp-action="Index" class="nk-menu-link">
+                                <span class="nk-menu-text">Customer List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                 @if (Context.Session.GetInt32("Level") == 4 || Context.Session.GetInt32("Level") == 3)
+                {
+                    <li class="nk-menu-item has-sub ">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon">
+                                <em class="icon ni ni-network"></em>
+                            </span>
+                            <span class="nk-menu-text">Connections</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a asp-controller="ConnectionTypes" asp-action="Index" class="nk-menu-link">
+                                    <span class="nk-menu-text">ConnectionTypes List</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a asp-controller="ConnectionTypes" asp-action="Create" class="nk-menu-link">
+                                    <span class="nk-menu-text">ConnectionTypes Create</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a asp-controller="Connections" asp-action="Index" class="nk-menu-link">
+                                    <span class="nk-menu-text">Connections List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+
+                <li class="nk-menu-item has-sub ">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon">
+                            <em class="icon ni ni-cc-alt2-fill"></em>
+                        </span>
+                        <span class="nk-menu-text">Orders</span>
+                    </a>
+                    <ul class="nk-menu-sub">
+                        <li class="nk-menu-item ">
+                            <a asp-controller="Orders" asp-action="Index" class="nk-menu-link">
+                                <span class="nk-menu-text">Order List - Default</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                 @if (Context.Session.GetInt32("Level") == 4 || Context.Session.GetInt32("Level") == 3)
+                {
+                    <li class="nk-menu-item has-sub ">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon">
+                                <em class="icon ni ni-building"></em>
+                            </span>
+                            <span class="nk-menu-text">Distributors</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item ">
+                                <a asp-controller="Distributors" asp-action="Create" class="nk-menu-link">
+                                    <span class="nk-menu-text">Create Distributors</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a asp-controller="Distributors" asp-action="Index" class="nk-menu-link">
+                                    <span class="nk-menu-text">List Distributors</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <li class="nk-menu-item has-sub ">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon">
+                            <em class="icon ni ni-list-thumb"></em>
+                        </span>
+                        <span class="nk-menu-text">Categories</span>
+                    </a>
+                    <ul class="nk-menu-sub" >
+                        <li class="nk-menu-item ">
+                            <a asp-controller="Categories" asp-action="Create" class="nk-menu-link">
+                                <span class="nk-menu-text">Create Category</span>
+                            </a>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a asp-controller="Categories" asp-action="Index" class="nk-menu-link">
+                                <span class="nk-menu-text">List Category</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nk-menu-item has-sub">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon">
+                            <em class="icon ni ni-card-view"></em>
+                        </span>
+                        <span class="nk-menu-text">Products</span>
+                    </a>
+                    <ul class="nk-menu-sub">
+                        <li class="nk-menu-item">
+                            <a asp-controller="Products" asp-action="Create" class="nk-menu-link">
+                                <span class="nk-menu-text">Product Create</span>
+                            </a>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a asp-controller="Products" asp-action="Index" class="nk-menu-link">
+                                <span class="nk-menu-text">Product List</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li class="nk-menu-item has-sub">
+                    <a asp-controller="Auth" asp-action="Logout" class="nk-menu-link">
+                        <span class="nk-menu-icon">
+                            <em class="icon ni ni-signout"></em>
+                        </span>
+                        <span class="nk-menu-text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+﻿@model NexusWeb.Models.User;
+@using NexusWeb.Helpers;
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+    var Randomkey = MyUtil.GenerateRamdomKey();
+}
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index" asp-controller="Users">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List User</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Create New User</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form class="row gy-4" asp-action="Create" enctype="multipart/form-data" method="post">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.UserName">User Name</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.UserName" type="text" class="form-control" />
+                                                    <span asp-validation-for="@Model.UserName" class="text-danger"> @ViewBag.Message</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Password"> Password</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.Password" type="password" class="form-control" />
+                                                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                                    <input asp-for="@Model.RandomKey" hidden type="text" value="@Randomkey" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.FullName">Name</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.FullName" type="text" class="form-control" />
+                                                    <span asp-validation-for="@Model.FullName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Phone">Phone</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.Phone" type="number" class="form-control" />
+                                                    <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Address">Address</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.Address" type="text" class="form-control" />
+                                                    <span asp-validation-for="@Model.Address" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Default File Upload</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input" name="ImageData" id="ImageData">
+                                                        <label class="form-file-label">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Level">Role</label>
+                                                <div class="form-control-wrap ">
+                                                    <div class="form-control-select">
+                                                        <select class="form-control" asp-for="@Model.Level">
+                                                            <option value="0">Customer</option>
+                                                            <option value="1">Retail Store Employee</option>
+                                                            <option value="2">Technical staff</option>
+                                                            <option value="3">Accounts Department Officer</option>
+                                                            <option value="4">Admin</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <button type="submit"  class="btn btn-lg btn-primary">Create Acount</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

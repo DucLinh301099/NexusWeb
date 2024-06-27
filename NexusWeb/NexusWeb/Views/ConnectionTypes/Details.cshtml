@@ -1,0 +1,56 @@
+﻿@model NexusWeb.Models.ConnectionType
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List ConnectionType</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Details ConnectionType</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <dl class="row">
+                                        <dt class="col-sm-2">
+                                            @Html.DisplayNameFor(model => model.Name)
+                                        </dt>
+                                        <dd class="col-sm-10">
+                                            @Html.DisplayFor(model => model.Name)
+                                        </dd>
+                                        <dt class="col-sm-2">
+                                            @Html.DisplayNameFor(model => model.Deposit)
+                                        </dt>
+                                        <dd class="col-sm-10">
+                                            @Html.DisplayFor(model => model.Deposit)
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.Id">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,289 @@
+﻿@model IEnumerable<NexusWeb.Models.Booking>
+@{
+    ViewData["Title"] = "Home Page";
+
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Dashboard</h3>
+                        </div>
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">
+                                <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu">
+                                    <em class="icon ni ni-more-v"></em>
+                                </a>
+                                <div class="toggle-expand-content" data-content="pageMenu">
+                                    <ul class="nk-block-tools g-3">
+                                        <li>
+                                            <div class="drodown">
+                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown">
+                                                    <em class="d-none d-sm-inline icon ni ni-calender-date"></em>
+                                                    <span>
+                                                        <span class="d-none d-md-inline">Last</span> 30 Days
+                                                    </span>
+                                                    <em class="dd-indc icon ni ni-chevron-right"></em>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>Last 30 Days</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>Last 6 Months</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>Last 1 Years</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nk-block-tools-opt">
+                                            <a href="#" class="btn btn-primary">
+                                                <em class="icon ni ni-reports"></em>
+                                                <span>Reports</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nk-block">
+                    <div class="row g-gs">
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Orders</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">@ViewBag.TO</div>
+                                                <div class="nk-ecwg6-ck">
+                                                    <canvas class="ecommerce-line-chart-s3" id="todayOrders" width="100" height="40" style="display: block; box-sizing: border-box; height: 40px; width: 100px;"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change up text-danger">
+                                                    <em class="icon ni ni-arrow-long-up"></em>4.63%
+                                                </span>
+                                                <span> vs. last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Revenue</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">$@ViewBag.TM</div>
+                                                <div class="nk-ecwg6-ck">
+                                                    <canvas class="ecommerce-line-chart-s3" id="todayRevenue" width="100" height="40" style="display: block; box-sizing: border-box; height: 40px; width: 100px;"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change down text-danger">
+                                                    <em class="icon ni ni-arrow-long-down"></em>2.34%
+                                                </span>
+                                                <span> vs. last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Bookings</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">@ViewBag.TB</div>
+                                                <div class="nk-ecwg6-ck">
+                                                    <canvas class="ecommerce-line-chart-s3" id="todayCustomers" width="100" height="40" style="display: block; box-sizing: border-box; height: 40px; width: 100px;"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change up text-danger">
+                                                    <em class="icon ni ni-arrow-long-up"></em>4.63%
+                                                </span>
+                                                <span> vs. last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Visitors</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">@ViewBag.TC</div>
+                                                <div class="nk-ecwg6-ck">
+                                                    <canvas class="ecommerce-line-chart-s3" id="todayVisitors" width="100" height="40" style="display: block; box-sizing: border-box; height: 40px; width: 100px;"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change down text-danger">
+                                                    <em class="icon ni ni-arrow-long-down"></em>2.34%
+                                                </span>
+                                                <span> vs. last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-8">
+                            <div class="card card-full">
+                                <div class="card-inner">
+                                    <div class="card-title-group">
+                                        <div class="card-title">
+                                            <h6 class="title">Recent Booking</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nk-tb-list mt-n2">
+                                    <div class="nk-tb-item nk-tb-head">
+                                        <div class="nk-tb-col">
+                                            <span>Booking No.</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <span>Address</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                            <span>Phone</span>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                            <span>Message</span>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                            <span>Status</span>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                            <span>Connection</span>
+                                        </div>
+                                    </div>
+                                      @foreach (var item in Model)
+                                         {
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col">
+                                            <span class="tb-lead">
+                                                    <a href="#">#@Html.DisplayFor(modelItem => item.Id)</a>
+                                            </span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                                <span class="title">@Html.DisplayFor(modelItem => item.Address)</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                                <span class="title">@Html.DisplayFor(modelItem => item.Phone)</span>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                                <span class="title">@Html.DisplayFor(modelItem => item.Message)</span>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                                @if (item.Status == 1)
+                                                {
+                                                    <span class="badge badge-dot badge-dot-xs bg-success">Connected</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-dot badge-dot-xs bg-warning">Pending</span>
+                                                }
+
+                                        </div>
+                                            <div class="nk-tb-col">
+                                                <span class="title">@Html.DisplayFor(modelItem => item.Connection.Name)</span>
+                                            </div>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-md-8 col-lg-6">
+                            <div class="card h-100">
+                                <div class="card-inner">
+                                    <div class="card-title-group mb-2">
+                                        <div class="card-title">
+                                            <h6 class="title">Store Statistics</h6>
+                                        </div>
+                                    </div>
+                                    <ul class="nk-store-statistics">
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Orders</div>
+                                                <div class="count">@ViewBag.TO</div>
+                                            </div>
+                                            <em class="icon bg-primary-dim ni ni-bag"></em>
+                                        </li>
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Users</div>
+                                                <div class="count">@ViewBag.TU</div>
+                                            </div>
+                                            <em class="icon bg-info-dim ni ni-users"></em>
+                                        </li>
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Products</div>
+                                                <div class="count">@ViewBag.TP</div>
+                                            </div>
+                                            <em class="icon bg-pink-dim ni ni-box"></em>
+                                        </li>
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Categories</div>
+                                                <div class="count">@ViewBag.TCe</div>
+                                            </div>
+                                            <em class="icon bg-purple-dim ni ni-server"></em>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

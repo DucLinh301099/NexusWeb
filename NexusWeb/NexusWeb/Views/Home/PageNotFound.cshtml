@@ -1,0 +1,35 @@
+﻿
+@{
+	ViewData["Title"] = "NotFound";
+	Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+
+<section class="ls s-py-100 s-py-md-160 error-404 not-found page_404">
+	<div class="container">
+		<div class="row">
+
+			<div class="d-none d-lg-block divider-70"></div>
+
+			<div class="col-sm-12 text-center">
+
+				<header class="page-header">
+					<h1>404</h1>
+					<h3>Oops! This Page Could Not Be Found!</h3>
+					<h6>Sorry, but the page you are looking for does not exist, has been removed or had its name changed</h6>
+				</header>
+				<!-- .page-header -->
+
+				<div class="page-content">
+					<div id="search-404" class="widget widget_search">
+					</div>
+
+					<p>
+						<a asp-action="Index" class="btn btn-white"><span>Back To Homepage</span></a>
+					</p>
+				</div>
+				<!-- .page-content -->
+			</div>
+			<div class="d-none d-lg-block divider-80"></div>
+		</div>
+	</div>
+</section>

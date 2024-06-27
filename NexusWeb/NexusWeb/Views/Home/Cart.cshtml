@@ -1,0 +1,118 @@
+﻿@model IEnumerable<NexusWeb.ViewModels.CartItem>
+
+
+@{
+	ViewData["Title"] = "Shopping Cart";
+	Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+
+
+<section class="ls s-py-80 s-py-lg-120 s-py-xl-160 shop-cart">
+	<div class="container">
+		<div class="row">
+			<main class="col-lg-12">
+				<div class="woocommerce-message">
+					"Premium quality" removed. <a href="#">Undo?</a>
+				</div>
+
+				<form class="woocommerce-cart-form" asp-action="UpdateCart" method="post">
+
+					<table class="shop_table shop_table_responsive cart">
+						<thead>
+							<tr>
+								<th class="product-remove">&nbsp;</th>
+								<th class="product-thumbnail">&nbsp;</th>
+								<th class="product-name">Product</th>
+								<th class="product-price">Price</th>
+								<th class="product-quantity product">Quantity</th>
+								<th class="product-subtotal">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model) {
+							<tr class="cart_item">
+
+								<td class="product-remove">
+									<a asp-action="RemoveItem" class="remove" aria-label="Remove this item" asp-route-id="@item.ProductId" data-product_sku="">×</a>
+								</td>
+
+								<td class="product-thumbnail">
+									<a href="shop-product-right.html">
+											<img width="180" height="180" src="@Url.Content("~/admin/images/" + item.Image)" class="" alt="">
+									</a>
+								</td>
+
+								<td class="product-name" data-title="Product">
+									<a href="shop-product-right.html">Premium Quality</a>
+								</td>
+
+								<td class="product-price" data-title="Price">
+									<span class="amount">
+										<span>$</span>@item.Price
+									</span>
+								</td>
+
+								<td class="product-quantity product" data-title="Quantity">
+									<div class="quantity">
+										<input type="button" value="+" class="plus">
+										<i class="fa fa-angle-up" aria-hidden="true"></i>
+											<input type="number" class="input-text qty text" step="1" min="1" max="1000" name="quantity" value="@item.Quantity" title="Qty" size="4">
+										<input type="button" value="-" class="minus">
+										<i class="fa fa-angle-down" aria-hidden="true"></i>
+									</div>
+								</td>
+
+								<td class="product-subtotal" data-title="Total">
+									<span class="amount">
+											<span>$</span>@item.Total
+									</span>
+								</td>
+							</tr>
+							}
+
+							<tr>
+								<td colspan="6" class="actions">
+
+									<button type="submit" class="btn btn-outline-maincolor" name="update_cart"><span>Update cart</span></button>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</form><div class="cart_totals ">
+
+
+					<h5>Cart totals</h5>
+
+					<table class="shop_table shop_table_responsive">
+
+						<tbody>
+							<tr class="order-total">
+								<th>Total</th>
+								<td data-title="Total">
+									<strong>
+										<span class="amount">
+											<span>$</span>@ViewBag.TotalCartShop
+										</span>
+									</strong>
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+
+					<div class="wc-proceed-to-checkout">
+						<a asp-action="Checkout" asp-controller="Home" class="checkout-button alt wc-forward btn btn-maincolor"><span>Proceed to checkout</span></a>
+					</div>
+
+
+				</div>
+			</main>
+		</div>
+
+
+		
+	</div>
+	
+</section>

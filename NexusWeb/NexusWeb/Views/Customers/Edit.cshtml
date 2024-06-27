@@ -1,0 +1,120 @@
+﻿@model NexusWeb.Models.User
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index" asp-controller="Users">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List User</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Edit User</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form class="row gy-4" asp-action="Edit" method="post" enctype="multipart/form-data">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="UserName">User Name</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="UserName" class="form-control" />
+                                                    <span asp-validation-for="UserName" class="text-danger"> @ViewBag.Message</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="Password"> Password</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="Password" type="password" class="form-control" />
+                                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                                    <input asp-for="RandomKey" hidden type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="FullName">Name</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="FullName" class="form-control" />
+                                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                                    <input asp-for="Status" hidden type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="Phone">Phone</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="Phone" type="number" class="form-control" />
+                                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="Address">Address</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="Address" class="form-control" />
+                                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Default File Upload</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input" name="ImageData" id="ImageData">
+                                                        <label class="form-file-label">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="Level">Role</label>
+                                                <div class="form-control-wrap ">
+                                                    <div class="form-control-select">
+                                                        <select class="form-control" asp-for="Level">
+                                                            <option value="0">Customer</option>
+                                                            <option value="1">Retail Store Employee</option>
+                                                            <option value="2">Technical staff</option>
+                                                            <option value="3">Accounts Department Officer</option>
+                                                            <option value="4">Admin</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-lg btn-primary">Save</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+@* @model List<Product> *@
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<Product>;
+
+
+<section class="ls s-py-80 s-py-lg-120 s-py-xl-160">
+    <div class="container">
+        <div class="row">
+            <main class="col-lg-8 col-xl-9 order-lg-2">
+                <div class="columns-3">
+
+                    <ul class="products">
+                        @foreach (var item in Model)
+                        {
+                            <li class="product vertical-item padding-small content-padding">
+                                <div class="product-inner hero-bg rounded">
+                                    <a class="link-scale" asp-controller="Home" asp-action="Product" asp-route-id="@item.Id">
+                                        <span class="onsale small-text">Sale!</span>
+                                        <img src="@Url.Content("~/admin/images/"+item.AvatarImages)" alt="" style="max-height: 268px; width:268px
+    object-fit: cover;">
+                                    </a>
+                                    <div class="item-content">
+                                        <h2>@item.Name</h2>
+                                        <div class="star-rating">
+                                            <span style="width:80%">
+                                                Rated <strong class="rating">4.00</strong>
+                                                out of 5
+                                            </span>
+                                        </div>
+                                        <span class="price">
+                                            <span>$</span>@item.Price
+                                        </span>
+                                        <a rel="nofollow" asp-action="AddToCart" asp-controller="Home" asp-route-id="@item.Id"
+                                           class="btn btn-maincolor small-btn product_type_simple add_to_cart_button">
+                                            <span>
+                                                Add
+                                                to cart
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        
+
+
+                    </ul>
+                </div>
+                <!-- columns 2 -->
+
+                <nav class="woocommerce-pagination">
+                    <ul class="page-numbers">
+                        @Html.PagedListPager(Model, page => Url.Action("Shop", new { page = page }))
+                    </ul>
+                </nav>
+
+            </main>
+            <aside class="col-lg-4 col-xl-3 order-lg-1">
+                <div class="widget widget_product_search">
+
+                    <h5 class="widget-title">Search</h5>
+
+                    <form role="search" class="woocommerce-product-search" action="/">
+
+                        <label class="screen-reader-text" for="woocommerce-product-search-field-widget">
+                            Search for:
+                        </label>
+
+                        <input type="search" id="woocommerce-product-search-field-widget"
+                               class="search-field" placeholder="Keyword" value="" name="search">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+
+
+
+                <div class="widget woocommerce widget_product_categories">
+                    <h5 class="widget-title">Categories</h5>
+                    <ul class="product-categories">
+                        @await Component.InvokeAsync("Category")
+                        
+
+                    </ul>
+                </div>
+
+
+@* 
+                <div class="widget woocommerce widget_product_tag_cloud">
+
+                    <h5 class="widget-title">Tags</h5>
+
+                    <div class="tagcloud">
+                        <a href="shop-right.html" class="tag-cloud-link" aria-label="album (1 product)">
+                            Premium
+                        </a>
+                        <a href="shop-right.html" class="tag-cloud-link" aria-label="premium (1 product)">
+                            Poster
+                        </a>
+                        <a href="shop-right.html" class="tag-cloud-link" aria-label="product (1 product)">
+                            Single
+                        </a>
+                        <a href="shop-right.html" class="tag-cloud-link" aria-label="single (1 product)">
+                            Album
+                        </a>
+                    </div>
+                </div> *@
+
+
+
+            </aside>
+        </div>
+    </div>
+</section>

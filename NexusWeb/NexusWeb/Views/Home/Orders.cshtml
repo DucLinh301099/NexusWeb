@@ -1,0 +1,87 @@
+﻿@model IEnumerable<NexusWeb.Models.Order>
+@{
+	ViewData["Title"] = "Shop Orders";
+	Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+
+<section class="ls s-pt-80 s-pb-70 s-py-lg-120 s-py-xl-160">
+	<div class="container">
+		<div class="row">
+			<main class="col-lg-12">
+				<article id="post-1708" class="post-1708 page type-page status-publish hentry">
+					<header class="entry-header mb-30">
+						<h1 class="entry-title">Orders</h1> <span class="edit-link"><a class="post-edit-link" href="#">Edit<span class="screen-reader-text"> "My account"</span></a></span>
+					</header><!-- .entry-header -->
+					<div class="entry-content">
+						<div class="woocommerce">
+							@await Html.PartialAsync("../Shared/NavClient")
+
+							
+
+							<div class="woocommerce-MyAccount-content">
+								@if (Model.Count() == 0)
+								{
+									<div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
+										<a class="woocommerce-Button btn btn-maincolor small-btn" href="shop-right.html"><span>Go shop</span></a>
+										No order has been made yet.
+									</div>
+								}
+								else
+								{
+
+									<table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+										<thead>
+											<tr>
+												<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">Order</span></th>
+												<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">Date</span></th>
+												<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">Status</span></th>
+												<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">Total</span></th>
+											</tr>
+										</thead>
+
+										<tbody>
+											@foreach (var item in Model)
+											{
+											<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
+												<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="Order">
+													<a href="shop-account-order-single.html">#@item.Id</a>
+
+												</td>
+												<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="Date">
+													<time datetime="2018-03-22T13:34:43+00:00">@item.CreateAt</time>
+
+												</td>
+												<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="Status">
+														@if (item.Status == 1)
+														{
+															<span class="badge badge-dot badge-dot-xs bg-success">Connected</span>
+														}
+														else
+														{
+															<span class="badge badge-dot badge-dot-xs bg-warning">Pending</span>
+														}
+												</td>
+												<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="Total">
+													<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>@item.Total</span> 
+												</td>
+												@* <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions with-btn" data-title="Actions">
+													<a href="shop-account-order-single.html" class="woocommerce-button btn btn-maincolor small-btn view"><span>View</span></a>
+												</td> *@
+											</tr>
+											}
+										</tbody>
+									</table>
+
+								}
+
+
+							</div>
+						</div>
+					</div><!-- .entry-content -->
+				</article>
+
+			</main>
+		</div>
+
+	</div>
+</section>

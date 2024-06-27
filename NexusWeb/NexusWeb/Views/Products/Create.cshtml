@@ -1,0 +1,127 @@
+﻿@model NexusWeb.ViewModels.ProductVM;
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List Products</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Create New Product</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form class="row gy-4" asp-action="Create" enctype="multipart/form-data" method="post">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Name">Name</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.Name" class="form-control" />
+                                                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Price">Price</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.Price" type="number" class="form-control" />
+                                                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Detail">Detail</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="@Model.Detail" class="form-control" />
+                                                    <span asp-validation-for="@Model.Detail" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.ImageData">Images File Upload</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" asp-for="@Model.ImageData" name="ImageData" id="ImageData" class="form-file-input">
+                                                        <label class="form-file-label" >Choose file</label>
+                                                        <span asp-validation-for="@Model.ImageData" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.LImageData">Upload multiple photos</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" asp-for="@Model.LImageData" multiple name="LImageData" id="LImageData" class="form-file-input">
+                                                        <label class="form-file-label">Choose file</label>
+                                                        <span asp-validation-for="@Model.LImageData" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.DistributorId">Distributor</label>
+                                                <div class="form-control-wrap ">
+                                                    <div class="form-control-select">
+                                                        <select asp-for="@Model.DistributorId" class="form-control" asp-items="ViewBag.DistributorId"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.CategoryId">Category</label>
+                                                <div class="form-control-wrap ">
+                                                    <div class="form-control-select">
+                                                        <select asp-for="@Model.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="@Model.Description">Description</label>
+                                                <div class="form-control-wrap">
+                                                    <textarea class="form-control no-resize" asp-for="@Model.Description">Description</textarea>
+                                                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-lg btn-primary">Create Products</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

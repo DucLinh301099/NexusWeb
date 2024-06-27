@@ -1,0 +1,59 @@
+﻿@model ConnectionType;
+<div class="nk-add-product toggle-slide toggle-slide-right toggle-screen-any" data-content="addConnectionType" data-toggle-screen="any" data-toggle-overlay="true" data-toggle-body="true" data-simplebar="init">
+    <div class="simplebar-wrapper" style="margin: -24px;">
+        <div class="simplebar-height-auto-observer-wrapper">
+            <div class="simplebar-height-auto-observer"></div>
+        </div>
+        <div class="simplebar-mask">
+            <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden;">
+                    <div class="simplebar-content" style="padding: 24px;">
+                        <div class="nk-block-head">
+                            <div class="nk-block-head-content">
+                                <h5 class="nk-block-title">New Type</h5>
+                                <div class="nk-block-des">
+                                    <p>Add Name Connection and Deposit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nk-block">
+                            <form class="row g-3" asp-action="ListConnection" method="post">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" asp-for="@Model.Name">Name Type Connection</label>
+                                        <div class="form-control-wrap">
+                                            <input type="text" asp-for="@Model.Name" class="form-control" id="product-title">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" asp-for="@Model.Deposit">Sale Price</label>
+                                        <div class="form-control-wrap">
+                                            <input type="number" asp-for="@Model.Deposit" class="form-control" id="sale-price">
+                                            <span class="text-danger">@ViewBag.Message</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">
+                                        <em class="icon ni ni-plus"></em>
+                                        <span>Add New</span>
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="simplebar-placeholder" style="width: auto; height: 700px;"></div>
+    </div>
+    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+        <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+    </div>
+    <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+        <div class="simplebar-scrollbar" style="height: 0px; display: none;"></div>
+    </div>
+</div>

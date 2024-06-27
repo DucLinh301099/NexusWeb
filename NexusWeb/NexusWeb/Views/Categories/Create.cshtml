@@ -1,0 +1,54 @@
+﻿@model NexusWeb.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index" asp-controller="Users">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List Category</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Create New Category</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form class="row gy-4" asp-action="Create" enctype="multipart/form-data" method="post">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" asp-for="Name">Category Name</label>
+                                                <div class="form-control-wrap">
+                                                    <input asp-for="Name" type="text" class="form-control" />
+                                                    <span asp-validation-for="Name" class="text-danger"> @ViewBag.Message</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-lg btn-primary">Create Acount</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model NexusWeb.Models.Distributor
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+
+
+
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List Distributor</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Edit Distributor</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form asp-action="Create">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="control-label"></label>
+                                            <input asp-for="Name" class="form-control" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Address" class="control-label"></label>
+                                            <input asp-for="Address" class="form-control" />
+                                            <span asp-validation-for="Address" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Phone" class="control-label"></label>
+                                            <input asp-for="Phone" class="form-control" />
+                                            <span asp-validation-for="Phone" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Create" class="btn btn-primary" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,369 @@
+﻿
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link rel="stylesheet" href="~/client/css/bootstrap.min.css">
+	<link rel="stylesheet" href="~/client/css/animations.css">
+	<link rel="stylesheet" href="~/client/css/font-awesome.css">
+	<link rel="stylesheet" href="~/client/css/main.css" class="color-switcher-link">
+	<script src="~/client/js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+	<div class="preloader">
+		<div class="preloader_image"></div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<div class="widget widget_search">
+			<a href="./" class="logo">
+				<span class="logo-text py-20"><strong>Nexus</strong>com</span>
+			</a>
+			<form method="get" class="searchform search-form" action="/">
+				<div class="form-group">
+					<input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+				</div>
+				<button type="submit" class="btn">Search</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+		</div>
+	</div>
+
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+			<!--topline section visible only on small screens|-->
+
+			<section class="page_topline ls s-borderbottom c-my-20">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-6 text-md-left text-center">
+							<ul class="top-includes">
+								<li>
+									<span class="icon-inline">
+										<span class="icon-styled color-main fs-14">
+											<i class="fa fa-phone"></i>
+										</span>
+										<span class="small-text">
+											<a href="#">0862442297</a>
+										</span>
+									</span>
+								</li>
+								<li>
+									<span class="icon-inline">
+										<span class="icon-styled color-main fs-14">
+											<i class="fa fa-pencil"></i>
+										</span>
+										<span class="small-text">
+											<a href="#"><span class="__cf_email__" data-cfemail="#">dangvandat09@gmail.com</span></a>
+										</span>
+									</span>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6 text-center text-md-right d-none d-md-block">
+							<ul class="top-includes">
+								<li>
+									<span class="icon-inline">
+										<span class="icon-styled color-main2 fs-14">
+											<i class="fa fa-user"></i>
+										</span>
+										@if (Context.Session.GetString("IdUser") == null)
+											{
+												<span class="small-text">
+													<a class="hover-main2" asp-area="" asp-controller="Auth" asp-action="Login"> Login in / sign up</a>
+											</span>
+										}
+										else
+										{
+											<span class="small-text">
+													@Context.Session.GetString("UserName")
+											</span>
+										}
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!--eof topline-->
+
+			<div class="header_absolute header_layout_1">
+				<!-- header with two Bootstrap columns - left for logo and right for navigation and includes (search, social icons, additional links and buttons etc -->
+				<header class="page_header ls justify-nav-end">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col-xl-2 col-lg-4 col-md-5 col-11">
+								<a href="./" class="logo">
+									<span class="logo-text py-20"><strong>Nex</strong>us</span>
+								</a>
+							</div>
+							<div class="col-xl-9 col-lg-8 col-md-7 col-1">
+								<div class="nav-wrap">
+									<nav class="top-nav">
+										<ul class="nav sf-menu">
+
+
+											<li class="active">
+												<a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+											</li>
+											
+											<li>
+												<a asp-area="" asp-controller="Home" asp-action="About">About</a>
+											</li>
+											<li>
+												<a asp-area="" asp-controller="Home" asp-action="BookingForm">BookingForm</a>
+											</li>
+											<li>
+												<a asp-area="" asp-controller="Home" asp-action="Shop">Shop</a>
+												<ul>
+													@await Component.InvokeAsync("Category")
+
+
+												</ul>
+											</li>
+											<li>
+												<a asp-area="" asp-controller="Home" asp-action="Cart">Cart</a>
+											</li>
+
+											<!-- blog -->
+											@if (Context.Session.GetString("IdUser") != null && Context.Session.GetString("role")=="Customer")
+											{
+												<li>
+													<a asp-area="" asp-controller="Home" asp-action="AccountD">Acount</a>
+												<ul>
+
+													<li>
+														<a asp-area="" asp-controller="Home" asp-action="AccountD">Account</a>
+													</li>
+													<li>
+														<a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+													</li>
+													<li>
+														<a asp-area="" asp-controller="Home" asp-action="Addresses">Addresses</a>
+													</li>
+													<li>
+														<a asp-area="" asp-controller="Home" asp-action="AddressesEdit">AddressesEdit</a>
+													</li>
+													<li>
+														<a asp-area="" asp-controller="Home" asp-action="Checkout">Check Out</a>
+													</li>
+
+												</ul>
+												</li>
+											}
+											
+											@if (Context.Session.GetString("IdUser") != null && Context.Session.GetString("role") != "Customer")
+											{
+												<li>
+													<a>Admin</a>
+													<ul>
+														<li>
+															<a asp-area="" asp-controller="Admin" asp-action="Index">Admin Index</a>
+														</li>
+														@* <li>
+													<a asp-area="" asp-controller="Admin" asp-action="Login">Check Out</a>
+													</li> *@
+													</ul>
+												</li>
+											}
+											<!-- eof contacts -->
+											<!-- eof features -->
+
+										</ul>
+
+
+									</nav>
+									<!--hidding includes on small devices. They are duplicated in topline-->
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+			</div>
+
+			<section class="page_slider">
+				<div id="particles-js"></div>
+				<div class="flexslider" data-nav="false">
+					<ul class="slides">
+						<li class="ds">
+							<img src="~/client/images/slide01.jpg" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="intro_layers_wrapper">
+											<div class="intro_layers">
+												<div class="intro_layer" data-animation="fadeInRight">
+													<h1 class="intro_featured_word">Prepare<br>for<br>High Speed<br> Internet</h1>
+													<h5 class="intro_before_featured_word intro-absolute text-uppercase fw-200">
+														Best Internet Service<br> Provider In Country
+													</h5>
+												</div>
+												<div class="intro_layer" data-animation="fadeInUp">
+													<p class="text-uppercase intro_after_featured_word">Check our Internet Plans</p>
+												</div>
+											</div> <!-- eof .intro_layers -->
+										</div> <!-- eof .intro_layers_wrapper -->
+									</div> <!-- eof .col-* -->
+								</div><!-- eof .row -->
+							</div><!-- eof .container -->
+						</li>
+						<li class="ds slide2">
+							<img src="~/client/images/slide02.jpg" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="intro_layers_wrapper">
+											<div class="intro_layers">
+												<div class="intro_layer" data-animation="fadeInRight">
+													<h1 class="slide2 intro_featured_word">Internet<br>for<br>Institution<br>& SME</h1>
+													<h5 class="fw-300 text-uppercase intro_before_featured_word intro-absolute">
+														Leased Line Internet<br> with A+ Category
+													</h5>
+												</div>
+												<div class="intro_layer" data-animation="fadeInUp">
+													<p class="text-uppercase intro_after_featured_word">Check our Services</p>
+												</div>
+											</div> <!-- eof .intro_layers -->
+										</div> <!-- eof .intro_layers_wrapper -->
+									</div> <!-- eof .col-* -->
+								</div><!-- eof .row -->
+							</div><!-- eof .container -->
+							<div class="social-flex">
+								<p class="social-heading">
+									follow
+								</p>
+								<p class="social-icons">
+									<a href="#" class="fa fa-facebook color-white" title="facebook"></a>
+									<a href="#" class="fa fa-twitter color-white" title="twitter"></a>
+									<a href="#" class="fa fa-youtube-play color-white" title="google"></a>
+								</p>
+							</div>
+						</li>
+						<li class="ds slide3">
+							<img src="~/client/images/slide03.jpg" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="intro_layers_wrapper">
+											<div class="intro_layers">
+												<div class="intro_layer" data-animation="fadeInRight">
+													<h1 class="slide2 intro_featured_word">Don’t<br>Suffer<br>The<br>Buffer</h1>
+													<h5 class="intro-absolute fw-300 text-uppercase intro_before_featured_word">
+														Speeds Up to 1 Gbps<br> with Unlimited Data
+													</h5>
+												</div>
+												<div class="intro_layer" data-animation="fadeInUp">
+													<p class="text-uppercase intro_after_featured_word">Check Testimonials</p>
+												</div>
+											</div> <!-- eof .intro_layers -->
+										</div> <!-- eof .intro_layers_wrapper -->
+									</div> <!-- eof .col-* -->
+								</div><!-- eof .row -->
+							</div><!-- eof .container -->
+						</li>
+					</ul>
+				</div> <!-- eof flexslider -->
+				<div class="ds social-flex">
+					<p class="social-heading">
+						follow
+					</p>
+					<p class="social-icons">
+						<a href="#" class="fa fa-facebook color-white" title="facebook"></a>
+						<a href="#" class="fa fa-twitter color-white" title="twitter"></a>
+						<a href="#" class="fa fa-youtube-play color-white" title="google"></a>
+					</p>
+				</div>
+				<div class="arrow">
+					<img src="~/client/images/bottom.png" alt="">
+				</div>
+				<div class="animated-arrow">
+					<a href="#price">
+						<div class="mouse_scroll">
+							<span class=""><i class="color-main fa fa-angle-down unu"></i></span>
+							<span class=""><i class="color-main fa fa-angle-down doi"></i></span>
+							<span class=""><i class="color-main fa fa-angle-down trei"></i></span>
+						</div>
+					</a>
+				</div>
+			</section>
+
+			@RenderBody()
+
+
+			<section class="footer-carousel c-gutter-0 container-px-0 s-py-0">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="owl-carousel small-gallery-carousel" data-margin="0" data-responsive-lg="8" data-responsive-md="4" data-responsive-sm="3" data-responsive-xs="2" data-nav="true" data-loop="true">
+
+								<a href="~/client/images/f03.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/f03.jpg" alt="">
+								</a>
+								<a href="~/client/images/04.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/04.jpg" alt="">
+								</a>
+								<a href="~/client/images/f05.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/f05.jpg" alt="">
+								</a>
+								<a href="~/client/images/06.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/06.jpg" alt="">
+								</a>
+								<a href="~/client/images/f07.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/f07.jpg" alt="">
+								</a>
+								<a href="~/client/images/08.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/08.jpg" alt="">
+								</a>
+								<a href="~/client/images/09.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/09.jpg" alt="">
+								</a>
+								<a href="~/client/images/f10.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/f10.jpg" alt="">
+								</a>
+								<a href="~/client/images/01.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/01.jpg" alt="">
+								</a>
+								<a href="~/client/images/02.jpg" class="photoswipe-link" data-width="800" data-height="800">
+									<img src="~/client/images/02.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			@await Html.PartialAsync("Footer")
+
+
+		</div><!-- eof #box_wrapper -->
+	</div><!-- eof #canvas -->
+
+
+	<script src="~/client/js/compressed.js"></script>
+	<script src="~/client/js/main.js"></script>
+	<script src="~/client/js/switcher.js"></script>
+
+	<!-- Google Map Script -->
+	
+
+</body>
+
+</html>

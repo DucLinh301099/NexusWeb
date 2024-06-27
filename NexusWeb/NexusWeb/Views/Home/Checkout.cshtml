@@ -1,0 +1,115 @@
+﻿@model IEnumerable<NexusWeb.ViewModels.CartItem>
+@{
+	ViewData["Title"] = "Check Out";
+	Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+
+<section class="ls s-pt-80 s-pb-50 s-pt-lg-120 s-pb-lg-100 s-pt-xl-160 s-pb-xl-130">
+	<div class="container">
+		<div class="row">
+			<main class="col-lg-12">
+
+				<form name="checkout" method="post" class="checkout woocommerce-checkout" asp-action="Checkout" enctype="multipart/form-data" novalidate="novalidate">
+
+
+					<div class="col2-set" id="customer_details">
+						<div class="col-1">
+							<div class="woocommerce-billing-fields">
+
+								<h3>Billing details</h3>
+
+
+								<div class="woocommerce-billing-fields__field-wrapper">
+									<p class="form-row form-row-first validate-required woocommerce-invalid woocommerce-invalid-required-field" id="billing_first_name_field" data-priority="10">
+										<label for="billing_first_name" class="">
+											Full
+											Name <abbr class="required" title="required">*</abbr>
+										</label>
+										<input type="text" class="input-text form-control" disabled value="Full Name : @ViewBag.User.FullName">
+									</p>
+									<p class="form-row form-row-last validate-required">
+										<label for="billing_last_name" class="">
+											Phone <abbr class="required" title="required">*</abbr>
+										</label>
+										<input type="text" class="input-text form-control" disabled value="Phone : @ViewBag.User.Phone">
+									</p>
+									<p class="form-row form-row-wide" >
+										<label for="billing_company" class="">Role</label>
+										<input type="text" class="input-text form-control" disabled value="Role : @Context.Session.GetString("Role")">
+									</p>
+									<p class="form-row form-row-wide address-field validate-required">
+										<label for="billing_address_1" class="">
+											Street
+											address <abbr class="required" title="required">*</abbr>
+										</label>
+										<input type="text" class="input-text form-control" disabled value="Address : @ViewBag.User.Address">
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+					<h3 id="order_review_heading">Your order</h3>
+
+
+					<div id="order_review" class="woocommerce-checkout-review-order">
+						<table class="shop_table woocommerce-checkout-review-order-table">
+							<thead>
+								<tr>
+									<th class="product-name">Product</th>
+									<th class="product-total">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model) {
+								<tr class="cart_item">
+									<td class="product-name">
+										@item.Name <strong class="product-quantity">× @item.Quantity</strong>
+									</td>
+									<td class="product-total">
+										<span class="woocommerce-Price-amount amount">
+											<span class="woocommerce-Price-currencySymbol">$</span>@item.Total
+										</span>
+									</td>
+								</tr>
+								}
+							</tbody>
+							<tfoot>
+
+								<tr class="order-total">
+									<th>Total</th>
+									<td>
+										<strong>
+											<span class="woocommerce-Price-amount amount">
+												<span class="woocommerce-Price-currencySymbol">$</span>@ViewBag.TotalCartShop
+											</span>
+										</strong>
+									</td>
+								</tr>
+
+
+							</tfoot>
+						</table>
+
+						<div class="woocommerce-checkout-payment">
+							<div class="form-row place-order">
+								<button type="submit" class="btn btn-outline-maincolor small-button" ><span>Place order</span></button>
+
+							</div>
+						</div>
+
+					</div>
+
+
+				</form>
+
+
+			</main>
+		</div>
+	</div>
+	<div class="divider-10 d-none d-xl-block"></div>
+</section>

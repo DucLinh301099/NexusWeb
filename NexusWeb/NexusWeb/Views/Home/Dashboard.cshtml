@@ -1,0 +1,47 @@
+﻿@{
+	ViewData["Title"] = "Account Dashboard";
+	Layout = "~/Views/Shared/Layout_Naxus_Other.cshtml";
+}
+<section class="ls s-pt-80 s-pb-70 s-py-lg-120 s-py-xl-160">
+	<div class="container">
+		<div class="row">
+			<main class="col-lg-12">
+
+				<article>
+					<header class="entry-header mb-30">
+						<h1 class="entry-title">My account</h1>
+						<span class="edit-link">
+							<a class="post-edit-link" href="#">
+								Edit
+								<span class="screen-reader-text"> "My account"</span>
+							</a>
+						</span>
+					</header><!-- .entry-header -->
+					<div class="entry-content">
+						<div class="woocommerce">
+							@await Html.PartialAsync("../Shared/NavClient")
+
+
+							<div class="woocommerce-MyAccount-content">
+
+								<p>
+									Hello <strong>@Context.Session.GetString("UserName")</strong> (not <strong>admin</strong>? <a asp-action="Logout" asp-controller="Auth">
+										Log
+										out
+									</a>)
+								</p>
+
+								<p>
+									From your account dashboard you can view your <a asp-action="Orders" asp-controller="Home">recent orders</a>,
+									manage your <a asp-action="Addresses" asp-controller="Home">shipping and billing addresses</a> and <a <a asp-action="Account" asp-controller="Home">edit your password and account details</a>.
+								</p>
+
+							</div>
+						</div>
+					</div><!-- .entry-content -->
+				</article>
+
+			</main>
+		</div>
+	</div>
+</section>

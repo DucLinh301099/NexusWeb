@@ -1,0 +1,65 @@
+﻿@model NexusWeb.Models.Order
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Admin/Layout.cshtml";
+}
+
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <div class="nk-block-head-sub">
+                                <a class="back-to" asp-action="Index" asp-controller="Users">
+                                    <em class="icon ni ni-arrow-left"></em>
+                                    <span>List Order</span>
+                                </a>
+                            </div>
+                            <h2 class="nk-block-title fw-normal">Edit Order</h2>
+                        </div>
+                    </div>
+                    <div class="nk-block nk-block-lg">
+                        <div class="card card-bordered card-preview">
+                            <div class="card-inner">
+                                <div class="preview-block">
+                                    <form asp-action="Edit">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <input type="hidden" asp-for="Id" />
+                                        <div class="form-group">
+                                            <label asp-for="UserId" class="control-label"></label>
+                                            <select asp-for="UserId" disabled class="form-control" asp-items="ViewBag.UserId"></select>
+                                            <span asp-validation-for="UserId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Total" class="control-label"></label>
+                                            <input asp-for="Total" disabled class="form-control" />
+                                            <span asp-validation-for="Total" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Status" class="control-label"></label>
+                                            <input asp-for="Status" class="form-control" />
+                                            <span asp-validation-for="Status" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="CreateAt" class="control-label"></label>
+                                            <input asp-for="CreateAt" disabled class="form-control" />
+                                            <span asp-validation-for="CreateAt" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Save" class="btn btn-primary" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
